@@ -143,7 +143,7 @@ public class loginwhats {
         driver.findElement(By.id("id=\"editable_text\"")).sendKeys(phoneNum);
 
     }
-
+//
     @AfterTest
     public  void closeBrowser () throws InterruptedException {
         Thread.sleep(3000);
