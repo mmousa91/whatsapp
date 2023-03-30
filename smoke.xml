@@ -5,8 +5,11 @@
     <test name="Regression1" thread-count="2" parallel="classes">
         <classes>
 
-            <class name="loginwhats1"/>
             <class name="loginwhats2"/>
+            <class name="loginwhats3"/>
+            <class name="loginwhats4"/>
+
+
 
 
         </classes>

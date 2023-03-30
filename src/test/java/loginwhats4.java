@@ -1,6 +1,9 @@
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
@@ -8,10 +11,12 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 
-public class loginwhats2 {
+public class loginwhats4 {
 
     WebDriver driver = null;
     Actions action ;
@@ -66,7 +71,7 @@ public class loginwhats2 {
         XSSFWorkbook wb = new XSSFWorkbook(inputStream);
 
         //Creating a Sheet object using the sheet Name
-        XSSFSheet sheet = wb.getSheet("phones2");
+        XSSFSheet sheet = wb.getSheet("phones4");
         //  XSSFSheet sheetMsg = wb.getSheet("Msg");
 
         //Create a row object to retrieve row at index 1
@@ -100,7 +105,7 @@ public class loginwhats2 {
                 Thread.sleep(4000);
 
                 action.sendKeys(Keys.ESCAPE).build().perform();
-                Thread.sleep(20000);
+                Thread.sleep(30000);
 
 
             }

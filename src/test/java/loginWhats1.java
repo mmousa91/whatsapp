@@ -1,24 +1,17 @@
-import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 import java.io.*;
 
 
-public class loginwhats1 {
+public class loginWhats1 {
 
     WebDriver driver = null;
     Actions action ;
@@ -41,10 +34,10 @@ public class loginwhats1 {
     }
 
     @Test(priority = 1)
-    public void openBrowser() throws InterruptedException, IOException {
+    public void openBrowser() throws InterruptedException {
 
         //driver.navigate().to("http://justnotepad.com/");
-        driver.navigate().to("http://justnotepad.com/get/31c6d51f5676e28af4a1bcaccae381f6");
+        driver.navigate().to("http://justnotepad.com/get/40547389fd2cf1dc915399f0fc2e84ff");
         Thread.sleep(3000);
 
         driver.findElement(By.id("password")).sendKeys("12345678");
@@ -58,7 +51,7 @@ public class loginwhats1 {
 
         driver.switchTo().newWindow(WindowType.TAB);
         driver.navigate().to("https://web.whatsapp.com/");
-        Thread.sleep(60000);
+        Thread.sleep(120000);
 
     }
 
@@ -66,10 +59,10 @@ public class loginwhats1 {
     public void  iteration () throws InterruptedException, IOException {
     File file = new File("C:\\Users\\MMousa\\Downloads\\num.xlsx");
 
-    //Create an object of FileInputStream class to read excel file
+    //Create an object of FileInputStream class to read Excel file
     FileInputStream inputStream = new FileInputStream(file);
 
-    //Creating workbook instance that refers to .xlxs file
+    //Creating workbook instance that refers to xlsx file
     XSSFWorkbook wb = new XSSFWorkbook(inputStream);
 
     //Creating a Sheet object using the sheet Name
@@ -77,11 +70,11 @@ public class loginwhats1 {
     //  XSSFSheet sheetMsg = wb.getSheet("Msg");
 
     //Create a row object to retrieve row at index 1
-    XSSFRow row1 = sheet.getRow(0);
+    //XSSFRow row1 = sheet.getRow(0);
     // XSSFRow rowMsg = sheetMsg.getRow(0);
 
-    //Create a cell object to retreive cell at index 0
-    XSSFCell cell1 = row1.getCell(0);
+    //Create a cell object to retrieve cell at index 0
+    //XSSFCell cell1 = row1.getCell(0);
     // XSSFCell cellMsg = rowMsg.getCell(0);
 
     //Get the phone in a variable
@@ -90,22 +83,25 @@ public class loginwhats1 {
     for (int i = 0; i <= rowCount; i++)
     {
         //get cell count in a row
-        int cellcount = sheet.getRow(i).getLastCellNum();
+        int loginWhats1 = sheet.getRow(i).getLastCellNum();
 
-        for (int j = 0; j < cellcount; j++) {
-            driver.findElement(By.xpath("//*[@id=\"side\"]/div[1]/div/div/div[2]/div/div[2]")).click();
-            driver.findElement(By.xpath("//*[@id=\"side\"]/div[1]/div/div/div[2]/div/div[2]")).clear();
-            driver.findElement(By.xpath("//*[@id=\"side\"]/div[1]/div/div/div[2]/div/div[2]")).sendKeys(sheet.getRow(i).getCell(j).getStringCellValue());
-            driver.findElement(By.xpath("//*[@id=\"side\"]/div[1]/div/div/div[2]/div/div[2]")).sendKeys(Keys.ENTER);
-            action.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).build().perform();
+        for (int j = 0; j < loginWhats1; j++) {
+            driver.findElement(By.xpath("//*[@id=\"side\"]/div[1]/div/div/div[2]/div/div[1]")).click();
+            driver.findElement(By.xpath("//*[@id=\"side\"]/div[1]/div/div/div[2]/div/div[1]")).clear();
+            driver.findElement(By.xpath("//*[@id=\"side\"]/div[1]/div/div/div[2]/div/div[1]")).sendKeys(sheet.getRow(i).getCell(j).getStringCellValue());
+            driver.findElement(By.xpath("//*[@id=\"side\"]/div[1]/div/div/div[2]/div/div[1]")).sendKeys(Keys.ENTER);
+            Thread.sleep(3000);
+
+            action.keyDown(Keys.CONTROL).sendKeys("v").build().perform();
+            action.keyUp(Keys.CONTROL).build().perform();
             Thread.sleep(4000);
 
             action.sendKeys(Keys.ENTER).build().perform();
             Thread.sleep(4000);
 
-           //driver.findElement(By.xpath("//*[@id=\"main\"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]")).sendKeys(Keys.ENTER);
             action.sendKeys(Keys.ESCAPE).build().perform();
             Thread.sleep(4000);
+
 
         }
 
