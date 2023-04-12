@@ -2,11 +2,10 @@
 
 <suite name="Suite1" verbose="1" >
 
-    <test name="Regression1" thread-count="2" parallel="classes">
+    <test name="Regression1" thread-count="4" parallel="classes">
         <classes>
-
+            <class name="loginWhats1"/>
             <class name="loginwhats2"/>
-            <class name="loginwhats3"/>
             <class name="loginwhats4"/>
 
 
