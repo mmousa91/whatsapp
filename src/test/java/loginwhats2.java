@@ -37,7 +37,7 @@ public class loginwhats2 {
     public void openBrowser() throws InterruptedException {
 
         //driver.navigate().to("http://justnotepad.com/");
-        driver.navigate().to("http://justnotepad.com/get/ad93288a4c2589a5a7533d26221d8def");
+        driver.navigate().to("http://justnotepad.com/get/101358519b6eddfe7ad1f6d7bf824a9b");
         Thread.sleep(3000);
 
         driver.findElement(By.id("password")).sendKeys("12345678");
@@ -51,7 +51,7 @@ public class loginwhats2 {
 
         driver.switchTo().newWindow(WindowType.TAB);
         driver.navigate().to("https://web.whatsapp.com/");
-        Thread.sleep(120000);
+        Thread.sleep(180000);
 
     }
 

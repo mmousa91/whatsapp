@@ -37,16 +37,16 @@ public class db {
     @Test
     public void test() {
         try{
-            String query = "select * from emp;";
+            String query = "select * fro";
 // Get the contents of userinfo table from DB
             ResultSet res = stmt.executeQuery(query);
 // Print the result until all the records are printed
 // res.next() returns true if there is any next record else returns false
             while (res.next())
             {
-                System.out.println(res.getString(1));
-                System.out.println("\t" + res.getString(2));
-               System.out.println("\t" + res.getString(3));
+                System.out.print(res.getString(1));
+                System.out.print("\t" + res.getString(2));
+               System.out.print("\t" + res.getString(3));
                 System.out.println("\t" + res.getString(4));
             }
         }

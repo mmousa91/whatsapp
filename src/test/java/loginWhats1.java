@@ -15,7 +15,7 @@ public class loginWhats1 {
 
     WebDriver driver = null;
     Actions action ;
-
+    navigation n = new navigation();
 
 
     @BeforeTest
@@ -37,7 +37,7 @@ public class loginWhats1 {
     public void openBrowser() throws InterruptedException {
 
         //driver.navigate().to("http://justnotepad.com/");
-        driver.navigate().to("http://justnotepad.com/get/40547389fd2cf1dc915399f0fc2e84ff");
+        driver.navigate().to(n.url);
         Thread.sleep(3000);
 
         driver.findElement(By.id("password")).sendKeys("12345678");

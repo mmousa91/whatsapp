@@ -17,7 +17,7 @@ public class  SQLConnector {
         String password = "";
 
         //Query to Execute
-        String query = "select *  from emp;";
+        String query = "ALTER TABLE emp ADD salary int(5);";
 
         //Load mysql jdbc driver
         Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -27,7 +27,7 @@ public class  SQLConnector {
 
         //Create Statement Object
         Statement stmt = con.createStatement();
-
+        stmt.executeQuery(query);
         // Execute the SQL Query. Store results in ResultSet
         ResultSet rs= stmt.executeQuery(query);
 
